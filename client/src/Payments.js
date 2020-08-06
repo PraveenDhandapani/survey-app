@@ -11,6 +11,7 @@ class Payments extends Component {
               name="E- Survey"
               description="Payment for Survey Credits"
               amount={500}
+              currency="inr"
               stripeKey={process.env.REACT_APP_STRIPE_KEY} 
               token={token => this.props.handleToken(token)} >
               <button className="btn">Add credits</button>

@@ -34,7 +34,7 @@ if (process.env.NODE_ENV === 'production') {
     //then the below code redirects to index.html page
     const path = require('path');
     app.get('*', (req, res) => {
-        res.sendFile(path.resolve(__dirname, 'clent', 'build', 'index.html'));
+        res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
     });
 }
 

@@ -12,6 +12,16 @@ const Survey = mongoose.model('surveys');
 
 module.exports = app => {
 
+    app.get('/api/surveys', authGuard, async (req, res) => {
+        // console.log(req.user.id);
+
+        const surveys = await Survey.find({ title: 'hi' })
+                                   .select({ recipients: false});
+
+       // console.log(surveys);
+        res.send(surveys);
+    });
+
     app.get('/api/survey/:surveyId/:choice', (req, res) => {
         res.send('Your response has registered with us. Thanks for your feedback');
     });

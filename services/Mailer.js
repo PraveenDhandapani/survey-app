@@ -50,8 +50,10 @@ class Mailer extends helper.Mail {
             path: '/v3/mail/send',
             body: this.toJSON()
         });
-
+        console.log('Mailer.send');
+        console.log(request);
         const response = await this.sgApi.API(request);
+        console.log(response);
         return response;
     }
 

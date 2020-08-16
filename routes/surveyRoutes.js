@@ -82,20 +82,19 @@ module.exports = app => {
             sentDate: Date.now()
         });
 
-        console.log("receipients >>" + recipients);
-
-        console.log("survey Obj >>" + survey.recipients);
-
+      
         //creating Mailer object with survey details and template mail
         const mailer = new Mailer(survey, surveyTemplate(survey));
         try {
-            await mailer.send();
+            const mailSent = await mailer.send();
+            console.log(mailSent);
             await survey.save();
             req.user.credits -= 1;
             const user = await req.user.save();
 
             res.send(user);
         } catch (err) {
+            console.log(err);
             res.status(422).send(err);
         }
 

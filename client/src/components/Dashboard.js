@@ -7,7 +7,7 @@ class Dashboard extends Component {
     render() {
         return (
             <div>
-                <div> Dashboard </div>
+                <div style={{ marginBottom: '10px' }}> Dashboard </div>
                 <SurveysList />
                 <div className="fixed-action-btn">
                     <Link to="/newSurvey" className="btn-floating btn-large-blue">

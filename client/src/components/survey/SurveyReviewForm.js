@@ -9,7 +9,7 @@ const SurveyReviewForm = ({ onEditBack, formValues, submitSurvey, history }) => 
 
     const reviewFields = _.map(surveyFormFields, ({label, name }) => {
         return (
-            <div key={name}>
+            <div style={{ marginTop: '15px' }} key={name}>
             <label>{label} </label>
             <div> {formValues[name]} </div> 
           </div>
@@ -22,9 +22,10 @@ const SurveyReviewForm = ({ onEditBack, formValues, submitSurvey, history }) => 
     return (
         <div>
             <h5>Please Review your Survey Form Data</h5>
-            <div>
+            <div style={{ marginTop: '15px' }}>
                 {reviewFields}
             </div>
+            <div style={{ marginTop: '15px' }}>
             <button className="red btn-flat left white-text" onClick={onEditBack}>
                 Back
             <i className="material-icons right">backspace</i>
@@ -32,7 +33,8 @@ const SurveyReviewForm = ({ onEditBack, formValues, submitSurvey, history }) => 
             <button onClick={() => submitSurvey(formValues, history)} className="green btn-flat right white-text">
                 Send Email
             <i className="material-icons right">email</i>
-            </button>
+                </button>
+            </div>
         </div>
         );
 };

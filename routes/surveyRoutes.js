@@ -29,7 +29,7 @@ module.exports = app => {
     app.post('/api/survey/webhooks', (req, res) => {
 
          //For Dev ngrok Tunel testing purpose
-          console.log(req.body);
+        //  console.log(req.body);
         // res.send({ msg: "Integration is working" });
         
 
@@ -63,7 +63,7 @@ module.exports = app => {
              })
             .value();
 
-        console.log(events);
+       // console.log(events);
  
          // Webhooks doesn't require any response back
        
@@ -87,7 +87,6 @@ module.exports = app => {
         const mailer = new Mailer(survey, surveyTemplate(survey));
         try {
             const mailSent = await mailer.send();
-            console.log(mailSent);
             await survey.save();
             req.user.credits -= 1;
             const user = await req.user.save();

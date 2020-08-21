@@ -15,7 +15,7 @@ module.exports = app => {
     app.get('/api/surveys', authGuard, async (req, res) => {
         // console.log(req.user.id);
 
-        const surveys = await Survey.find({ title: 'hi' })
+        const surveys = await Survey.find({ title: 'title' })
                                    .select({ recipients: false});
 
        // console.log(surveys);
